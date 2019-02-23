@@ -1,0 +1,26 @@
+{
+  "name": "food-logger",
+  "version": "1.0.0",
+  "description": "A basic full-stack app that lets users log food (burgers) they wish to eat and which they have already eaten.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/romverner/Food-Logger.git"
+  },
+  "keywords": [
+    "full-stack",
+    "logging",
+    "log",
+    "food",
+    "burgers"
+  ],
+  "author": "Roman Verner",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/romverner/Food-Logger/issues"
+  },
+  "homepage": "https://github.com/romverner/Food-Logger#readme"
+}

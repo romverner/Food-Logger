@@ -1,28 +1,44 @@
-<h1>Eat The Burger!</h1>
+<div class="container mt-5">
+    <h1 class="text-center">Eat The Burger!</h1>
+</div>
 
-<ul>
-    {{#each burgers}}
-        {{#unless devoured}}
-            {{burger}}
-        {{/unless}}
-    {{/each}}
-</ul>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <ul>
+                {{#each burgers}}
+                {{#unless devoured}}
+                <li>
+                    {{burger}}
+                </li>
+                {{/unless}}
+                {{/each}}
+            </ul>
+        </div>
 
-<ul>
-    {{#each burgers}}
-        {{#if devoured}}
-            {{burgers}}
-        {{/if}}
-    {{/each}}
-</ul>
-
-<h4>Add a burger!</h4>
-<form class="create-form">
-
-    <div class="form-group">
-        <label for="burger">Burger Name:</label>
-        <input type="text" id="burger" name="burger">
+        <div class="col-sm-6">
+            <ul>
+                {{#each burgers}}
+                {{#if devoured}}
+                <li>
+                    {{burgers}}
+                </li>
+                {{/if}}
+                {{/each}}
+            </ul>
+        </div>
     </div>
+</div>
 
-    <button type="submit">Add Burger</button>
-</form>
+<div class="container">
+    <h4 class="text-center">Add a burger!</h4>
+    <form class="create-form text-center">
+
+        <div class="form-group">
+            <label for="burger">Burger Name:</label>
+            <input type="text" id="burger" name="burger">
+        </div>
+
+        <button type="submit">Add Burger</button>
+    </form>
+</div>

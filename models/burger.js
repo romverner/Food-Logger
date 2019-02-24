@@ -6,13 +6,13 @@ var burger = {
             cb(res);
         });
     },
-    insertOne: (cols, vals, cb) => {
-        orm.insertOne("burgers", cols, vals, (res) => {
+    insertOne: (val, cb) => {
+        orm.insertOne("burgers", val, (res) => {
             cb(res);
         });
     },
-    updateOne: (objColVals, condition, cb) => {
-        orm.updateOne("burgers", objColVals, condition, (res) => {
+    updateOne: (idVal, cb) => {
+        orm.updateOne("burgers", [bool, idVal], (res) => {
             cb(res);
         });
     }

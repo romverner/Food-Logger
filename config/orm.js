@@ -1,70 +1,32 @@
 var connection = require("../config/connection.js");
 
-function printQuestionMarks(num) {
-    var arr = [];
-
-    for (var i = 0; i < num; i++) {
-        arr.push("?");
-    };
-
-    return arr.toString();
-};
-
-function objToSql(obj) {
-    var arr = [];
-
-    for (var key in obj) {
-        var value = obj[key];
-
-        if (Object.hasOwnProperty.call(obj, key)) {
-            if (typeof value === "string" && value.indexOf(" ") >= 0) {
-                value = "'" + value + "'";
-            };
-        };
-        arr.push(key + "=" + value);
-    };
-
-    return arr.toString();
-};
-
 var orm = {
     selectAll: (table, cb) => {
-        var queryStr = "SELECT * FROM ?";
+        var queryStr = "SELECT * FROM ? ;";
         connection.query(queryStr, [table], (err, result) => {
             if (err) throw err;
             console.log(result);
             cb(result);
         });
     },
-    insertOne: (table, cols, vals, cb)=> {
-        var queryStr = "INSERT INTO " + table;
-        
-        queryStr += " (";
-        queryStr += cols.toString();
-        queryStr += ") ";
-        queryStr += "VALUES (";
-        queryStr += printQuestionMarks(vals.length);
-        queryStr += ") ";
+    insertOne: (table, val, cb)=> {
+        var queryStr = "INSERT INTO " + table + " (burger) VALUES (?);";
 
-        console.log(queryStr);
-
-        connection.query(queryStr, vals, (err, result) => {
+        connection.query(queryStr, [val], (err, result) => {
             if (err) throw err;
             console.log(result);
             cb(result);
         });
     },
-    updateOne: (table, objColVals, condition, cb) => {
+    updateOne: (table, bool, idVal, cb) => {
         var queryStr = "UPDATE " + table;
 
-        queryStr += " SET ";
-        queryStr += objToSql(objColVals);
-        queryStr += " WHERE ";
-        queryStr += condition;
+        queryStr += " SET devoured = ? ";
+        queryStr += " WHERE id = ? '";
 
         console.log(queryStr);
 
-        connection.query(queryStr, (err, result) => {
+        connection.query(queryStr, [bool, idVal], (err, result) => {
             if (err) throw err;
             console.log(result);
             cb(result);

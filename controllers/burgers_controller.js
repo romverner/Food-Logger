@@ -4,26 +4,24 @@ var burger  = require("../models/burger.js");
 
 router.get("/", (req, res) => {
     burger.selectAll( (data) => {
-        var berObject = {
+        var bObject = {
             burgers: data
         };
-        console.log(berObject);
-        res.render("index", berObject);
+        console.log(bObject);
+        res.render("index", bObject);
     });
 });
 
 router.post("/api/burgers", (req, res) => {
     burger.insertOne([
-        "burger", "devoured"
-    ], [
-        req.body.name, req.body.devoured
-    ], (result) => {
+        req.body.burger]
+        , (result) => {
         res.json({ id: result.insertId });
     });
 });
 
 router.put("/api/burgers/:id", (req, res) => {
-    var dev = "id = " + req.params.id;
+    var devoured = "id = " + req.params.id;
 
     console.log("devoured", devoured);
 

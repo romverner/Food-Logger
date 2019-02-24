@@ -2,15 +2,17 @@ var connection = require("../config/connection.js");
 
 var orm = {
     selectAll: (table, cb) => {
-        var queryStr = "SELECT * FROM ? ;";
-        connection.query(queryStr, [table], (err, result) => {
+        var queryStr = "SELECT * FROM " + table + ";";
+        connection.query(queryStr, (err, result) => {
             if (err) throw err;
             console.log(result);
             cb(result);
         });
     },
     insertOne: (table, val, cb)=> {
-        var queryStr = "INSERT INTO " + table + " (burger) VALUES (?);";
+        var queryStr = "INSERT INTO " + table;
+        
+        queryStr += " ('burger') VALUES (?);";
 
         connection.query(queryStr, [val], (err, result) => {
             if (err) throw err;

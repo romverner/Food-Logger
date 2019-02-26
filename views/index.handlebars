@@ -8,9 +8,7 @@
             <ul>
                 {{#each burgers}}
                 {{#unless devoured}}
-                <li>
-                    {{burger}}
-                </li>
+                {{> burgers/burger-block sleep=true}}
                 {{/unless}}
                 {{/each}}
             </ul>
@@ -20,9 +18,7 @@
             <ul>
                 {{#each burgers}}
                 {{#if devoured}}
-                <li>
-                    {{burgers}}
-                </li>
+                {{> burgers/burger-block sleep=false}}
                 {{/if}}
                 {{/each}}
             </ul>

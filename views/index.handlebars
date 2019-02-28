@@ -1,10 +1,12 @@
-<div class="container mt-5">
+<div class="container mt-3 text-center">
+    <img class="img-fluid" src="assets/img/burger.jpg" style="max-height: 175px;">
     <h1 class="text-center">Eat The Burger!</h1>
 </div>
 
-<div class="container">
+<div class="container mt-5 bg-warning rounded">
     <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-6 mt-3">
+            <h4>Burger Bucket List:</h4>
             <ol>
                 {{#each burgers}}
                 {{#unless devoured}}
@@ -14,7 +16,8 @@
             </ol>
         </div>
 
-        <div class="col-sm-6">
+        <div class="col-sm-6 mt-3">
+            <h4>Burgers You've Eaten:</h4>
             <ol>
                 {{#each burgers}}
                 {{#if devoured}}
@@ -26,7 +29,7 @@
     </div>
 </div>
 
-<div class="continer">
+<div class="continer text-center mt-5">
     <form class="create-form">
         <h4 class="text-center">Add a burger!</h4>
         <form class="create-form text-center">
@@ -36,7 +39,7 @@
                 <input type="text" id="bur" name="burger">
             </div>
 
-            <button type="submit">Add Burger</button>
+            <button type="submit" class="btn btn-danger">Add Burger</button>
         </form>
     </form>
 </div>

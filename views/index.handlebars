@@ -5,36 +5,36 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-6">
-            <ul>
+            <ol>
                 {{#each burgers}}
                 {{#unless devoured}}
-                {{> burgers/burger-block sleep=true}}
+                {{> burgers/burger-block eaten=true}}
                 {{/unless}}
                 {{/each}}
-            </ul>
+            </ol>
         </div>
 
         <div class="col-sm-6">
-            <ul>
+            <ol>
                 {{#each burgers}}
                 {{#if devoured}}
-                {{> burgers/burger-block sleep=false}}
+                {{> burgers/burger-block eaten=false}}
                 {{/if}}
                 {{/each}}
-            </ul>
+            </ol>
         </div>
     </div>
 </div>
 
-<div class="container">
+<form class="create-form">
     <h4 class="text-center">Add a burger!</h4>
     <form class="create-form text-center">
 
         <div class="form-group">
-            <label for="burger">Burger Name:</label>
-            <input type="text" id="burger" name="burger">
+            <label for="bur">Burger Name:</label>
+            <input type="text" id="bur" name="burger">
         </div>
 
         <button type="submit">Add Burger</button>
     </form>
-</div>
+</form>

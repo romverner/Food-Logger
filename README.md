@@ -20,10 +20,6 @@ simply run the server.js file through node (by typing 'node server.js').
 You will need node installed on your machine, as well as an SQL
 workspace of choice. Also be sure to install the required npm packages.
 
-### Installing
-
-
-
 ## Deployment
 
 Currently this project is setup to work with Heroku and the Heroku app 
@@ -32,9 +28,14 @@ provided by the JawsDB app in your Heroku app's dashboard.
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds 
+* Visual Studio Code
+* Express
+* Express-Handlebars
+* MySQL
+* Handlebars
+* Bootstrap
+* JQuery
+* MySQL Workbench
 
 ## Authors
 
